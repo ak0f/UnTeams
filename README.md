@@ -1,164 +1,211 @@
 <div align="center">
 
-# 🗑️ UnTeams
+# UnTeams
 
-**Lösche deine eigenen Microsoft-Teams-Nachrichten automatisch, direkt in der Teams-Desktop-App.**
+**Eigene Microsoft-Teams-Nachrichten automatisch löschen.**
 
-Nach dem Vorbild von [Undiscord](https://github.com/victornpb/undiscord), nur für Microsoft Teams.
+Für die Teams-Desktop-App.
 
-[![Download](https://img.shields.io/github/v/release/ak0f/UnTeams?label=Download&style=for-the-badge&color=c4314b)](https://github.com/ak0f/UnTeams/releases/latest/download/UnTeams.zip)
-&nbsp;
-![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?style=for-the-badge&logo=windows)
-&nbsp;
+[![Download](https://img.shields.io/github/v/release/ak0f/UnTeams?label=Download\&style=for-the-badge\&color=c4314b)](https://github.com/ak0f/UnTeams/releases/latest/download/UnTeams.zip)
+ 
+![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?style=for-the-badge\&logo=windows)
+ 
 ![Lizenz](https://img.shields.io/github/license/ak0f/UnTeams?style=for-the-badge)
 
-<img src="docs/screenshot.png" alt="UnTeams-Fenster in Microsoft Teams" width="420">
+<img src="docs/screenshot.png" alt="UnTeams in Microsoft Teams" width="420">
 
 </div>
 
 ---
 
-## ✨ Funktionen
+## Funktionen
 
-- 🖥️ **Läuft in der Teams-Desktop-App.** Kein Browser, kein API-Key, kein Token kopieren.
-- 🧹 **Löscht nur deine eigenen Nachrichten.** Fremde Nachrichten werden nie angefasst.
-- 💬 **Nur im offenen Chat oder in mehreren Chats** auf einmal, mit Auswahl-Liste und Suche.
-- 🔍 **Vorschau (Probelauf):** Zeigt zuerst, was gelöscht würde, und markiert es rot. Dabei wird nichts gelöscht.
-- 🎯 **Filter:** Text enthält / Regex, Zeitraum (von–bis), nur mit Link, nur mit Datei/Bild.
-- 🐢 **Tempo einstellbar**, mit automatischer Bremse, wenn Teams langsam wird.
-- 📊 **Fortschritt, Zähler und Log** in Echtzeit, jederzeit mit **Stopp** abbrechen.
-- 🔒 **Sicherheitsabfrage** vor dem Löschen (zweimal klicken).
-- 🌗 Passt sich an das **helle oder dunkle** Teams-Design an.
+* Läuft direkt in der Teams-Desktop-App
+* Löscht nur eigene Nachrichten
+* Ein Chat oder mehrere ausgewählte Chats
+* Vorschau vor dem Löschen
+* Text- und Regex-Filter
+* Filter nach Zeitraum
+* Filter für Links und Anhänge
+* Einstellbare Geschwindigkeit
+* Automatische Pause bei langsamen Antworten von Teams
+* Fortschritt und Log
+* Jederzeit abbrechbar
+* Helles und dunkles Teams-Design
 
-## 📥 Download & Start
+## Download
 
-> **Voraussetzungen:** Windows 10/11, das **neue Microsoft Teams** (Desktop-App) und [Node.js](https://nodejs.org) ab Version 22 (LTS).
+**Voraussetzungen:** Windows 10/11, neues Microsoft Teams und Node.js 22 LTS oder neuer.
 
-1. **[⬇️ UnTeams.zip herunterladen](https://github.com/ak0f/UnTeams/releases/latest/download/UnTeams.zip)** und entpacken, z.B. nach `Dokumente\UnTeams`.
-2. Falls noch nicht vorhanden: **[Node.js LTS](https://nodejs.org)** installieren (einfach immer „Weiter“).
-3. Doppelklick auf **`UnTeams.bat`**.
+1. [UnTeams.zip herunterladen](https://github.com/ak0f/UnTeams/releases/latest/download/UnTeams.zip)
+2. ZIP-Datei entpacken
+3. [Node.js LTS](https://nodejs.org) installieren, falls noch nicht vorhanden
+4. `UnTeams.bat` starten
 
-Teams wird kurz neu gestartet. Sobald Teams geladen ist, erscheint unten rechts ein roter **🗑️-Knopf**.
+Teams wird dabei neu gestartet. Nach dem Laden erscheint unten rechts der UnTeams-Button.
 
-> ℹ️ Das schwarze UnTeams-Fenster muss offen bleiben, solange du das Tool brauchst (minimieren geht). Wenn du es schliesst, läuft Teams normal weiter.
+Das schwarze Terminal-Fenster muss geöffnet bleiben. Es kann minimiert werden.
 
-> ⚠️ Windows SmartScreen kann bei `.bat`-Dateien aus dem Internet warnen: **„Weitere Informationen“ → „Trotzdem ausführen“**. Der Code ist hier komplett einsehbar.
+> Windows SmartScreen kann beim Start der `.bat`-Datei eine Warnung anzeigen. Der Quellcode ist öffentlich einsehbar.
 
-## 🚀 So benutzt du es
+## Verwendung
 
-1. In Teams auf den **🗑️-Knopf** unten rechts klicken.
-2. **Wo löschen?**
-   - **Nur im offenen Chat:** Zuerst in Teams den Chat öffnen, dann hier weitermachen.
-   - **In ausgewählten Chats:** Auf „Chat-Liste laden“ klicken und die Chats ankreuzen (oder „Alle“).
-3. Wenn du willst, **Filter** setzen (z.B. nur Nachrichten vor einem bestimmten Datum).
-4. Auf **🔍 Vorschau** klicken und prüfen, was gefunden wird.
-5. Auf **Löschen starten** klicken, dann nochmals zur Bestätigung.
-6. Warten. Mit **■ Stopp** kannst du jederzeit abbrechen.
+1. Teams öffnen und einen Chat auswählen.
+2. Auf den UnTeams-Button klicken.
+3. Einen Chat auswählen oder mehrere Chats laden.
+4. Filter setzen, falls benötigt.
+5. `Vorschau` starten.
+6. Prüfen, welche Nachrichten gefunden wurden.
+7. `Löschen starten` auswählen und bestätigen.
 
-### Filter im Detail
+Mit `Stopp` kann der Vorgang beendet werden.
 
-| Filter | Bedeutung |
-|---|---|
-| **Text enthält** | Nur Nachrichten mit diesem Text (Gross/Klein egal) |
-| **Regex** | Der Text wird als regulärer Ausdruck gelesen, z.B. `^(ok\|jo\|ja)$` |
-| **Von / Bis** | Nur Nachrichten aus diesem Zeitraum |
-| **nur mit Link** | Nur Nachrichten, die einen Link enthalten |
-| **nur mit Datei/Bild** | Nur Nachrichten mit Anhang oder Bild |
+### Filter
 
-### Tempo
+| Filter             | Beschreibung                         |
+| ------------------ | ------------------------------------ |
+| Text enthält       | Sucht nach einem bestimmten Text     |
+| Regex              | Verwendet einen regulären Ausdruck   |
+| Von / Bis          | Begrenzt den Zeitraum                |
+| Nur mit Link       | Nur Nachrichten mit einem Link       |
+| Nur mit Datei/Bild | Nur Nachrichten mit Anhang oder Bild |
 
-Standard sind **1200 ms** Pause zwischen zwei Löschungen, also ca. 40–50 Nachrichten pro Minute. Kürzer geht auch. Wenn Teams dann nicht mehr reagiert, verdoppelt UnTeams die Pause automatisch und versucht es bis zu 3-mal neu.
+Beispiel:
 
-## ⚙️ Wie funktioniert das?
-
-Das neue Teams ist intern eine Web-App in **Microsoft Edge WebView2**. `UnTeams.bat` startet Teams mit einem lokalen Debug-Port (`127.0.0.1:9222`) und fügt darüber das UnTeams-Script in Teams ein, ähnlich wie Undiscord in Discord.
-
-Das Script macht genau das, was du von Hand machen würdest:
-
-```
-Chat öffnen → eigene Nachrichten finden → Rechtsklick → „Löschen“ → nächste Nachricht
-                      ↑                                                   |
-                      └──── hochscrollen, ältere Nachrichten laden ←──────┘
+```regex
+^(ok|jo|ja)$
 ```
 
-Es benutzt **kein Token und keine inoffizielle API**. Alles läuft über die normale Teams-Oberfläche und mit deinem normalen Login.
+### Geschwindigkeit
 
-## ❓ Probleme & FAQ
+Standardmässig wartet UnTeams 1200 ms zwischen zwei Löschvorgängen.
+
+Wenn Teams nicht mehr reagiert, wird die Pause automatisch erhöht. Fehlgeschlagene Aktionen werden bis zu drei Mal wiederholt.
+
+## Funktionsweise
+
+Das neue Teams verwendet Microsoft Edge WebView2.
+
+`UnTeams.bat` startet Teams mit einem lokalen Debug-Port (`127.0.0.1:9222`) und fügt anschliessend das UnTeams-Script in die Teams-Oberfläche ein.
+
+Der Ablauf entspricht dem manuellen Löschen:
+
+```text
+Chat öffnen
+    ↓
+Eigene Nachrichten finden
+    ↓
+Nachricht prüfen
+    ↓
+Löschen
+    ↓
+Nächste Nachricht
+```
+
+UnTeams verwendet keinen kopierten Token und keine eigene API. Die Aktionen werden über die Teams-Oberfläche ausgeführt.
+
+## Probleme
 
 <details>
-<summary><b>Der 🗑️-Knopf erscheint nicht</b></summary>
+<summary><b>Der UnTeams-Button erscheint nicht</b></summary>
 
-- Warte, bis Teams ganz geladen ist. Das Script wird erst dann eingefügt.
-- Ist das schwarze UnTeams-Fenster noch offen? Steht dort „UnTeams eingefügt ✔“?
-- Teams ganz beenden (auch im Infobereich unten rechts in der Taskleiste) und `UnTeams.bat` nochmals starten.
+* Warten, bis Teams vollständig geladen ist.
+* Prüfen, ob das Terminal noch geöffnet ist.
+* Teams vollständig beenden und `UnTeams.bat` erneut starten.
+
 </details>
 
 <details>
 <summary><b>„Teams hat keinen Debug-Port geöffnet“</b></summary>
 
-Teams lief noch im Hintergrund. Im Task-Manager alle `ms-teams.exe` beenden und `UnTeams.bat` nochmals starten.
+Teams lief wahrscheinlich noch im Hintergrund.
+
+Im Task-Manager alle `ms-teams.exe` Prozesse beenden und `UnTeams.bat` erneut starten.
+
 </details>
 
 <details>
 <summary><b>„Node.js fehlt“</b></summary>
 
-[Node.js LTS](https://nodejs.org) installieren, danach den PC neu starten oder dich einmal ab- und wieder anmelden.
+[Node.js LTS](https://nodejs.org) installieren und `UnTeams.bat` erneut starten.
+
 </details>
 
 <details>
-<summary><b>Einige Nachrichten wurden übersprungen oder hatten Fehler</b></summary>
+<summary><b>Einige Nachrichten wurden übersprungen</b></summary>
 
-- Manche Nachrichten kann man in Teams gar nicht löschen (z.B. System-Meldungen, alte Besprechungs-Nachrichten). Dort fehlt im Menü „Löschen“.
-- Bei Fehlern einfach nochmals starten. Bereits gelöschte Nachrichten werden übersprungen.
-- Pause etwas erhöhen, wenn viele Fehler kommen.
+Nicht jede Nachricht kann über die Teams-Oberfläche gelöscht werden. Dazu gehören unter anderem bestimmte System- und Besprechungsnachrichten.
+
+Bei vielen Fehlern die Geschwindigkeit reduzieren und den Vorgang erneut starten.
+
 </details>
 
 <details>
-<summary><b>Funktioniert das auch im Browser (teams.microsoft.com) oder im alten „Teams Classic“?</b></summary>
+<summary><b>Funktioniert UnTeams im Browser?</b></summary>
 
-Nein, UnTeams ist für das **neue Teams als Desktop-App** gebaut.
+Nein. UnTeams ist für das neue Microsoft Teams als Desktop-App entwickelt.
+
+Teams Classic wird ebenfalls nicht unterstützt.
+
 </details>
 
 <details>
-<summary><b>Sieht die andere Person, dass ich gelöscht habe?</b></summary>
+<summary><b>Wird das Löschen für andere Personen angezeigt?</b></summary>
 
-Ja. Wie beim Löschen von Hand steht bei der Nachricht „Diese Nachricht wurde gelöscht“.
+Ja. Teams zeigt bei einer gelöschten Nachricht den entsprechenden Hinweis an.
+
 </details>
 
-## 🔒 Sicherheit & Hinweise
+## Sicherheit
 
-- Der Debug-Port ist **nur lokal** auf deinem PC erreichbar (`127.0.0.1`), nicht aus dem Internet. Er bleibt offen, bis Teams geschlossen wird. Wenn du Teams danach normal startest, ist er wieder zu.
-- UnTeams speichert oder verschickt **keine Daten**. Kein Tracking, keine Server.
-- **Gelöscht ist gelöscht.** Nutze zuerst die Vorschau.
-- Bei **Schul- oder Firmenkonten** kann eine Aufbewahrungsrichtlinie gelten. Dann bleibt eine Kopie für die Admins erhalten, auch wenn die Nachricht im Chat weg ist.
-- Microsoft kann Teams jederzeit ändern. Wenn etwas nicht mehr geht, bitte ein [Issue](https://github.com/ak0f/UnTeams/issues) erstellen.
+* Der Debug-Port ist nur über `127.0.0.1` erreichbar.
+* UnTeams verwendet keinen eigenen Server.
+* Es werden keine Daten übertragen oder gespeichert.
+* Der Debug-Port wird mit dem Beenden von Teams geschlossen.
+* Gelöschte Nachrichten können nicht über UnTeams wiederhergestellt werden.
+* Bei Schul- und Firmenkonten können Aufbewahrungsrichtlinien gelten.
 
-## 🛠️ Für Entwickler
+Wenn Teams geändert wird, können Funktionen von UnTeams ausfallen. Fehler können über die [Issues](https://github.com/ak0f/UnTeams/issues) gemeldet werden.
 
-```
+## Entwicklung
+
+```text
 UnTeams/
-├─ UnTeams.bat          Starter (Doppelklick)
-├─ launcher/launch.mjs  Startet Teams mit Debug-Port und fügt das Script ein (ohne npm-Pakete)
-├─ src/
-│  ├─ teams.js          Alles, was von der Teams-Oberfläche abhängt (Selektoren)
-│  ├─ deleter.js        Kernlogik: suchen → filtern → löschen, Tempo/Bremse
-│  ├─ ui.js / ui.css    Das Fenster
-│  ├─ utils.js, main.js
-├─ build.js             Baut src/ → dist/unteams.js
-└─ dist/unteams.js      Fertiges Script
+├── UnTeams.bat
+├── launcher/
+│   └── launch.mjs
+├── src/
+│   ├── teams.js
+│   ├── deleter.js
+│   ├── ui.js
+│   ├── ui.css
+│   ├── utils.js
+│   └── main.js
+├── build.js
+└── dist/
+    └── unteams.js
 ```
+
+Build:
 
 ```bash
-node build.js            # Script neu bauen
-node launcher/launch.mjs # Teams starten und Script einfügen
+node build.js
 ```
 
-Wenn ein Teams-Update etwas kaputt macht, liegt es fast immer an den Selektoren in [`src/teams.js`](src/teams.js).
+Start:
 
-## 🙏 Credits
+```bash
+node launcher/launch.mjs
+```
 
-Idee und Aufbau inspiriert von **[Undiscord](https://github.com/victornpb/undiscord)** von victornpb.
+Die Teams-spezifischen Selektoren befinden sich in [`src/teams.js`](src/teams.js).
 
-## 📄 Lizenz
+## Credits
 
-[MIT](LICENSE). Nutzung auf eigene Verantwortung. UnTeams ist kein offizielles Microsoft-Produkt und nicht mit Microsoft verbunden.
+Inspiriert von [Undiscord](https://github.com/victornpb/undiscord) von victornpb.
+
+## Lizenz
+
+[MIT](LICENSE)
+
+UnTeams ist kein offizielles Microsoft-Produkt und nicht mit Microsoft verbunden.
