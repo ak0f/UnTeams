@@ -1,0 +1,14 @@
+{
+  "name": "unteams",
+  "version": "1.0.0",
+  "description": "Eigene Microsoft-Teams-Nachrichten in der Desktop-App automatisch löschen (wie Undiscord)",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "start": "node launcher/launch.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT"
+}
